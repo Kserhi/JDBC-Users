@@ -5,7 +5,7 @@ package example.app.repository.impl;
 import example.app.database.DBConn;
 import example.app.entity.User;
 import example.app.repository.AppRepository;
-import example.app.utils.Users;
+import example.app.utils.Constants;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -38,7 +38,7 @@ public class UserRepository implements AppRepository<User> {
             pstmt.executeUpdate();
             // Повернення повідомлення при безпомилковому
             // виконанні SQL-запиту
-            return Users.DATA_INSERT_MSG;
+            return Constants.DATA_INSERT_MSG;
         } catch (SQLException e) {
             // Повернення повідомлення про помилку роботи з БД
             return e.getMessage();
@@ -78,7 +78,7 @@ public class UserRepository implements AppRepository<User> {
         // Якщо ні, повертаємо повідомлення про відсутність таких даних,
         // інакше оновлюємо відповідний об'єкт в БД
         if (readById(user.getId()).isEmpty()) {
-            return Users.DATA_ABSENT_MSG;
+            return Constants.DATA_ABSENT_MSG;
         } else {
             // SQL-запит.
             // ? - заповнювач (placeholder) для параметра. Навіщо?
@@ -100,7 +100,7 @@ public class UserRepository implements AppRepository<User> {
                 pst.executeUpdate();
                 // Повернення повідомлення при безпомилковому
                 // виконанні SQL-запиту
-                return Users.DATA_UPDATE_MSG;
+                return Constants.DATA_UPDATE_MSG;
             } catch (SQLException e) {
                 // Повернення повідомлення про помилку роботи з БД
                 return e.getMessage();
@@ -115,7 +115,7 @@ public class UserRepository implements AppRepository<User> {
         // таких даних в БД, інакше видаляємо відповідний об'єкт
         // із БД.
         if (!isIdExists(id)) {
-            return Users.DATA_ABSENT_MSG;
+            return Constants.DATA_ABSENT_MSG;
         } else {
             // SQL-запит.
             // ? - заповнювач (placeholder) для параметра. Навіщо?
@@ -136,7 +136,7 @@ public class UserRepository implements AppRepository<User> {
                 pst.executeUpdate();
                 // Повернення повідомлення при безпомилковому
                 // виконанні SQL-запиту
-                return Users.DATA_DELETE_MSG;
+                return Constants.DATA_DELETE_MSG;
             } catch (SQLException e) {
                 // Повернення повідомлення про помилку роботи з БД
                 return e.getMessage();

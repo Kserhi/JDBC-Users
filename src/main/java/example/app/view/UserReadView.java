@@ -1,6 +1,6 @@
 package example.app.view;
 
-public class ContactReadView {
+public class UserReadView {
 
     // Виведення результату роботи програми
     public void getOutput(String output) {

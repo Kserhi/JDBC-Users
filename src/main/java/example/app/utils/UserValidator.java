@@ -10,17 +10,17 @@ public class UserValidator {
         Map<String, String> errors = new HashMap<>();
 
         if (data.containsKey("id") & AppValidator.isIdValid(data.get("id")))
-            errors.put("id", Users.WRONG_ID_MSG);
+            errors.put("id", Constants.WRONG_ID_MSG);
 
         if (data.containsKey("name")) {
             if (data.get("name") != null & data.get("name").isEmpty())
-                errors.put("name", Users.INPUT_REQ_MSG);
+                errors.put("name", Constants.INPUT_REQ_MSG);
         }
 
 
 
         if (data.containsKey("email") & AppValidator.isEmailValid(data.get("email")))
-            errors.put("email", Users.WRONG_EMAIL_MSG);
+            errors.put("email", Constants.WRONG_EMAIL_MSG);
 
         return errors;
     }

@@ -1,7 +1,7 @@
 package example.app.view;
 
 import example.app.utils.AppStarter;
-import example.app.utils.Users;
+import example.app.utils.Constants;
 
 import java.util.InputMismatchException;
 import java.util.Scanner;
@@ -15,7 +15,7 @@ public class AppView {
         try {
             option = scanner.nextInt();
         } catch (InputMismatchException e) {
-            System.out.println(Users.INCORRECT_VALUE_MSG);
+            System.out.println(Constants.INCORRECT_VALUE_MSG);
             AppStarter.startApp();
         }
         return option;
@@ -37,7 +37,7 @@ public class AppView {
 
     public void getOutput(String output) {
         if (output.equals("0")) {
-            System.out.println(Users.APP_CLOSE_MSG);
+            System.out.println(Constants.APP_CLOSE_MSG);
             System.exit(0);
         } else System.out.println(output);
     }

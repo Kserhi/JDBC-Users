@@ -4,19 +4,15 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ContactUpdateView {
+public class UserDeleteView {
 
     // Отримуємо вхідні дані
     public Map<String, String> getData() {
-        System.out.println("\nUPDATE FORM");
+        System.out.println("\nDELETE FORM");
         Map<String, String> map = new HashMap<>();
         Scanner scanner = new Scanner(System.in);
         System.out.print("Input id: ");
         map.put("id", scanner.nextLine().trim());
-        System.out.print("Input name: ");
-        map.put("name", scanner.nextLine().trim());
-        System.out.print("Input email in format example@mail.com: ");
-        map.put("email", scanner.nextLine().trim());
         return map;
     }
 

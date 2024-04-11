@@ -3,7 +3,7 @@ package example.app.service;
 import example.app.controller.UserController;
 import example.app.exceptions.OptionException;
 import example.app.utils.AppStarter;
-import example.app.utils.Users;
+import example.app.utils.Constants;
 import example.app.view.AppView;
 
 public class AppService {
@@ -20,7 +20,7 @@ public class AppService {
             case 0 -> new AppView().getOutput(Integer.toString(option));
             default -> {
                 try {
-                    throw new OptionException(Users.INCORRECT_OPTION_MSG);
+                    throw new OptionException(Constants.INCORRECT_OPTION_MSG);
                 } catch (OptionException e) {
                     new AppView().getOutput(e.getMessage());
                     AppStarter.startApp();

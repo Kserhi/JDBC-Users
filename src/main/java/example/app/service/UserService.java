@@ -4,7 +4,7 @@ import example.app.entity.User;
 import example.app.entity.UserMapper;
 import example.app.exceptions.UserException;
 import example.app.repository.impl.UserRepository;
-import example.app.utils.Users;
+import example.app.utils.Constants;
 import example.app.utils.UserValidator;
 
 import java.util.List;
@@ -48,8 +48,8 @@ public class UserService {
                                 .append(contact.toString())
                 );
                 return sb.toString();
-            } else return Users.DATA_ABSENT_MSG;
-        } else return Users.DATA_ABSENT_MSG;
+            } else return Constants.DATA_ABSENT_MSG;
+        } else return Constants.DATA_ABSENT_MSG;
     }
 
     public String update(Map<String, String> data) {
@@ -96,6 +96,6 @@ public class UserService {
             // Отримуємо об'єкт з Optional
             User user = optional.get();
             return user.toString();
-        } else return Users.DATA_ABSENT_MSG;
+        } else return Constants.DATA_ABSENT_MSG;
     }
 }

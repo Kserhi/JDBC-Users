@@ -4,7 +4,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public class ContactReadByIdView {
+public class UserReadByIdView {
 
     // Отримуємо вхідні дані
     public Map<String, String> getData() {
